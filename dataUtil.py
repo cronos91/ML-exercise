@@ -5,6 +5,8 @@ path = '/Users/seokinj/tensorflow/assignments2016/assignment1/cs231n/datasets/ci
 def load_CIFAR_batch(file):
 	with open(file, 'rb') as fo:
 		dict = pickle.load(fo, encoding='bytes')
+		# data format : 1024(R channel) / 1024(B channel) / 1024(G channel) = reshape(10000,3,32,32)
+		# image data : [R1,B1,G1], [R2,B2,G2] = transpose(0,2,3,1)
 		X = dict[b'data'].reshape(10000,3,32,32).transpose(0,2,3,1).astype("float")
 		Y = np.array(dict[b'labels'])
 		return X,Y
