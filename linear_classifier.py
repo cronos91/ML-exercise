@@ -1,4 +1,5 @@
 import numpy as np
+import data_util
 
 x = np.array([[56], [231], [24], [2]]) # input 
 w = np.array([[0.2, -0.5, 0.1, 2.0], [1.5, 1.3, 2.1, 0.0], [0, 0.25, 0.2, -0.3]]) # each row is one kind of template 
