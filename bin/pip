@@ -1,11 +1,3 @@
-#!/Users/seokinj/tensorflow/bin/python3.6
-
-# -*- coding: utf-8 -*-
-import re
-import sys
-
-from pip import main
-
-if __name__ == '__main__':
-    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
-    sys.exit(main())
+version https://git-lfs.github.com/spec/v1
+oid sha256:51089440b86ce1e79e7af6ddefb9ad1f7ddd533f65dd222bcade29ce5686f57a
+size 229
