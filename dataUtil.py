@@ -2,6 +2,12 @@ import numpy as np
 import pickle
 
 path = '/Users/seokinj/tensorflow/assignments2016/assignment1/cs231n/datasets/cifar-10-batches-py/'
+def multiple_trick(w,x,b):
+        nw = np.hstack([w,b])
+        x = np.vstack([x,[1]]) # hstack ; horizontal stack / vstack ; vertical stack /
+                               # w = np.append(w, b, axis=1) #axis 1 : column / axis 0 : row
+        return np.dot(nw,x) # np.dot(w,x) == w.dot(x)
+
 def load_CIFAR_batch(file):
 	with open(file, 'rb') as fo:
 		dict = pickle.load(fo, encoding='bytes')
@@ -22,11 +28,3 @@ def load_CIFAR_data():
 	y_trains = np.concatenate(ys)
 	x_tests, y_tests = load_CIFAR_batch(path+'test_batch')
 	return x_trains, y_trains, x_tests, y_tests	
-
-X_trains, Y_trains, X_tests, Y_tests = load_CIFAR_data()
-'''
-i    "X_train = np.reshape(X_train, (X_train.shape[0], -1))\n",
-    "X_val = np.reshape(X_val, (X_val.shape[0], -1))\n",
-    "X_test = np.reshape(X_test, (X_test.shape[0], -1))\n",
-    "X_dev = np.reshape(X_dev, (X_dev.shape[0], -1))\n",
-'''
